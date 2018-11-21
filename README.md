@@ -11,20 +11,22 @@ go get github.com/haobaozhong/stylelog
 # Example
 
 ```go
-import (
-    "log"
-    "os"
+package main
 
-    "github.com/haobaozhong/stylelog"
+import (
+	"log"
+	"os"
+
+	"github.com/haobaozhong/stylelog"
 )
 
 func main() {
-    baseLogger := log.New(os.Stdout, "", log.Ldate|log.Ltime|log.Lshortfile)
-    styleLogger := stylelog.New(baseLogger)
+	baseLogger := log.New(os.Stdout, "", log.Ldate|log.Ltime|log.Lshortfile)
+	styleLogger := stylelog.New(baseLogger)
 
-    logger.SetStyle(Bold, Underline, Green, Faint)
-    logger.Print("hello, world")
-    logger.Reset()
+	styleLogger.SetStyle(stylelog.Bold, stylelog.Underline, stylelog.Green, stylelog.Faint)
+	styleLogger.Print("hello, world")
+	styleLogger.Reset()
 }
 ```
 

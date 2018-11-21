@@ -1,6 +1,6 @@
 # Style Logger
 
-style logger add styles to Go standard `log.Logger`.
+Add styles to Go standard `log.Logger`.
 
 # Installation
 
@@ -11,12 +11,21 @@ go get github.com/haobaozhong/stylelog
 # Example
 
 ```go
-baseLogger := log.New(os.Stdout, "STYLE LOGGER: ", log.Ldate|log.Ltime|log.Lshortfile|log.Llongfile)
-styleLogger := stylelog.New(baseLogger)
+import (
+    "log"
+    "os"
 
-logger.Style(Bold, Underline, Green, Faint)
-logger.Print("hello, world")
-logger.Reset()
+    "github.com/haobaozhong/stylelog"
+)
+
+func main() {
+    baseLogger := log.New(os.Stdout, "", log.Ldate|log.Ltime|log.Lshortfile)
+    styleLogger := stylelog.New(baseLogger)
+
+    logger.SetStyle(Bold, Underline, Green, Faint)
+    logger.Print("hello, world")
+    logger.Reset()
+}
 ```
 
 ## Feedback

@@ -9,9 +9,8 @@ const (
 	CSI = "\033["
 )
 
-// style
+// Styles
 const (
-	// TODO: add more
 	Reset  = 0 // Reset / Normal	all attributes off
 	Normal = "m"
 
@@ -22,6 +21,35 @@ const (
 	SlowBlink  = 5 // Slow Blink	less than 150 per minute
 	RapidBlink = 6 // Rapid Blink	MS-DOS ANSI.SYS; 150+ per minute; not widely supported
 
+	ReverseVideo = 7  // reverse video	swap foreground and background colors
+	Conceal      = 8  // Conceal	Not widely supported.
+	CrossedOut   = 9  // Crossed-out	Characters legible, but marked for deletion.
+	Primary      = 10 // Primary(default) font
+	// 11–19	Alternative font	Select alternative font {\displaystyle n-10} {\displaystyle n-10}
+	Fraktur                = 20 //	Fraktur	Rarely supported
+	DoublyUnderline        = 21 // Doubly underline or Bold off	Double-underline per ECMA-48.[20] See discussion
+	NormalColorOrIntensity = 22 // Normal color or intensity	Neither bold nor faint
+	NotItalicNotFraktur    = 23 // Not italic, not Fraktur
+	UnderlineOff           = 24 // Underline off	Not singly or doubly underlined
+	BlinkOff               = 25 // Blink off
+	InverseOff             = 27 // Inverse off
+	RevealConcealOff       = 28 // Reveal conceal off
+	NotCrossedOut          = 29 // Not crossed out
+	// 30–37	Set foreground color
+	SetForegroundColor     = 38 // Set foreground color
+	DefaultForegroundColor = 39 // Default foreground color	implementation defined (according to standard)
+	// 40–47	Set background color
+	SetBackgroundColor     = 48 // Set background color
+	DefaultBackgroundColor = 49 //	Default background color implementation defined (according to standard)
+	Framed                 = 51 // Framed
+	Encircled              = 52 // Encircled
+	Overlined              = 53 // Overlined
+	NotFramedOrEncircled   = 54 // Not framed or encircled
+	NotOverlined           = 55 // Not overlined
+)
+
+// Colors
+const (
 	// foreground
 	Black   = 30
 	Red     = 31
